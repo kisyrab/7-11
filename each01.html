@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java" >
+        $(function(){
+            
+            var txt = $(".first").text("one");
+                console.log("text : " ,txt);
+
+            var col = $(".first").css("color" , "reds");
+                console.log("color : " ,col);
+            
+            var path = $("img").attr("src" , "img/home1.jpg");
+                console.log("img : " ,path);
+            
+            
+            $(".list li").each(function(index){
+                console.log("index : " ,index);
+                console.log("this : " , this);
+                console.log("this text : " , $(this).text);
+                console.log("this data : " , $(this).attr("data"));
+                
+            $(this).text($(this).attr("data"));
+
+            
+
+            }) //list li
+
+
+        })//j
+    </script>
+
+
+    <style type="text/css">
+        .first{color: powderblue;}
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <h1>Each function event</h1>
+
+        <ul class="list">
+            <li class="first" data="1">1. 하나</li>
+            <li data="2">2. 둘</li>
+            <li data="3">3. 셋</li>
+            <li data="4">4. 넷</li>
+            <li data="5">5. 다섯</li>
+        </ul>
+        <img src="img/home.jpg" alt="home">
+        <a href="#"></a>
+    </div>
+</body>
+</html>

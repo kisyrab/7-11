@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Danjo-bold-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{margin: 0; padding: 0;}
+ul,li{list-style: none;}
+a{text-decoration: none; color:inherit;}
+
+body{background-color: #495e41; color: #1C315E;
+    font-family: 'Danjo-bold-Regular';
+    overflow-y: hidden;
+}
+
+.wrap{
+    width: 800px;
+    margin: 50px auto;
+    box-shadow: 10px 25px 0px #1d2919; 
+}
+
+.logo{}
+
+.ninja{}
+.ninja .tt{
+    background-color: #fff;
+    /* background-color: #a7b8a0; */
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.ninja .tt img{
+    position: absolute;
+    left: -120px; bottom: 0;
+    display: none;
+    z-index: 10;
+}
+
+.ninja .tt h2{
+    color: #999;
+    height: 60px; 
+    line-height: 60px;
+    text-align: right;
+    padding: 0 20px;
+    border-top: 1px solid #3f5237;
+    /* border-bottom: 1px dotted #3f5237; */
+    cursor: pointer;
+    background-image: url("../img/sprite.png");
+    background-repeat: no-repeat;
+    background-color: #fff;
+    transition: all 0.3s;
+    ;
+    z-index: 20;
+
+}
+
+.ninja .tt h2:hover{
+    background-color: #a7b8a0;
+}
+
+.ninja .tt h2.on{
+    background-position: left bottom;
+}
+
+.ninja .tt p{
+    padding: 20px 20px 20px 350px;
+    text-align: justify;
+    line-height: 2;
+    display: none;
+}
+
+
+
+.ninja .blue h2.on{color: darkblue;}
+.ninja .purple h2.on{color: rgb(119, 0, 119);}
+.ninja .red h2.on{color: darkred;}
+.ninja .green h2.on{color: rgb(202, 145, 0);}

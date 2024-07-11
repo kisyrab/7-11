@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무지개메뉴</title>
+
+    <style>
+        @font-face {
+            font-family: 'Cafe24Meongi-B-v1.0';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Meongi-B-v1.0.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none; color: rgb(85, 85, 85);}
+        ul,li{list-style: none;}
+
+        body{
+            /* background-color: #F8E8EE; */
+            background-image: url(img/gra_bg.jpg);
+            background-size: cover;
+            font-family: 'Cafe24Meongi-B-v1.0';
+        }
+
+        h1{
+            margin-left: 20px;
+            margin-top: 100px;
+            color: rgb(46, 46, 46);
+            font-weight: 100;
+            font-size: 3rem;
+        }
+
+        .menu{margin-top: 80px;}
+        .menu li{
+            margin: 20px 0; width: 100px;}
+
+        .menu li a{
+            width: 90px;
+            display: block;
+            padding: 20px 0 20px 20px;
+            border-top: 2px solid gray;
+            border-right: 1px solid gray;
+            border-bottom: 1px solid gray;
+            border-radius: 0 40px 40px 0;
+            text-transform: capitalize;
+            opacity: 0.5;
+            /* margin-left: -80px; */
+
+        }
+
+    </style>
+
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script lang="java">
+        $(function(){
+            $(".menu li a").each(function(index){
+                var bg_color = $(this).children("a").attr("bg");
+                // $(this).find("a")
+                $(this).find("a").css({background : bg_color});
+            }) //each
+
+
+            $(".menu li a").css({"margin-left":"-86px"});
+
+            $(".menu li a").hover(function(){
+                $(this).stop().animate({"margin-left":"0" , "opacity":"1"},1000);
+            }, function(){
+                $(this).stop().animate({"margin-left":"-86px" , "opacity":"0.5"},1000);
+
+            })
+
+            // $(".menu li a").css({"margin-left":"-90px"})
+
+
+
+
+
+        })//j
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <h1>Rainbow colors <br>sliding menu</h1>
+    <ul class="menu">
+        <li><a href="#" bg="#F28585">menu 01</a></li>
+        <li><a href="#" bg="#FFCF96">menu 02</a></li>
+        <li><a href="#" bg="#FFF8C9">menu 03</a></li>
+        <li><a href="#" bg="#A8DF8E">menu 04</a></li>
+        <li><a href="#" bg="#B4E4FF">menu 05</a></li>
+        <li><a href="#" bg="#DFCCFB">menu 06</a></li>
+        <li><a href="#" bg="#FFDEFA">menu 07</a></li>
+    </ul>
+</body>
+</html>

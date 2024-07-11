@@ -1,0 +1,75 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탑메뉴애니메이션</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+        $(function(){
+            $(".menu li").each(function(index){
+                var bg_color = $(this).children("a").attr("bg");
+                $(this).find("a").css({background : bg_color});
+            })
+
+            $(".menu li a").hover(function(){
+                $(this).stop().animate({"margin-top":"0" ,"opacity" :"1"},1000)
+            },function(){
+                $(this).stop().animate({"margin-top":"-80px" ,"opacity" :"0.5"},1000)
+
+            })
+
+        })//j
+    </script>
+
+
+    <style>
+        *{margin: 0; padding: 0; /* box-sizing: border-box; */}
+        a{text-decoration: none; color: rgb(85, 85, 85);}
+        ul,li{list-style: none;}
+
+        body{color: navy; background-color: antiquewhite;}
+
+        .menu{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+                    
+        .menu li{
+            
+            margin: 0 20px;
+
+        }
+        .menu li a{
+            margin-top: -80px;
+            font-size: 20px;
+            font-weight: 600;
+            color: navy;
+            width: 100px;
+            height: 70px;
+            display: block;
+            padding: 30px;
+            /* border: 1px solid deepskyblue; */
+            border-radius: 0 0 70px 70px;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#" bg="#E0F4FF">menu 01</a></li>
+        <li><a href="#" bg="#87C4FF">menu 02</a></li>
+        <li><a href="#" bg="#39A7FF">menu 03</a></li>
+        <li><a href="#" bg="#0081C9">menu 04</a></li>
+        <li><a href="#" bg="#B4BDFF">menu 05</a></li>
+        <li><a href="#" bg="#83A2FF">menu 06</a></li>
+        <li><a href="#" bg="#4A55A2">menu 07</a></li>
+    </ul>    
+    <!-- <h1>Rainbow colors sliding menu</h1> -->
+</body>
+</html>

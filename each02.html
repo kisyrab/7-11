@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script lang="java">
+        $(function(){
+            $(".color_picker div").each(function(i){
+                var bg = $(this).text();
+                console.log(bg);
+                $(this).css("background" , bg)
+            })//each
+
+            $(".color_picker div").click(function(){
+                var bg= $(this).text();
+                $("body").animate({"background-color" : bg},500)
+            })
+
+            $(".color div").each(function(index){
+                var bg = $(this).attr("data");
+                console.log(bg);
+                $(this).css("background" , bg)
+            })
+
+            $(".color div").click(function(){
+                var bg= $(this).attr("data");
+                $("body").animate({"background-color" :bg},500)
+            })
+
+            var z_in = 1;
+
+            $("div, h1").draggable({}).css({cursor:"move"})
+            .mousedown(function(){
+                $(this).css({"z-index" : z_in});
+                z_in++;})
+
+
+        }) //j
+    </script>
+
+    <style type="text/css">
+        body{
+            background-color: skyblue;
+            padding: 50px;
+            color: gray;
+        }
+
+        .color_picker div{
+            width: 80px; height: 30px;
+            text-align: center;
+            line-height: 30px;
+            display: inline-block;
+            margin-right: 20px;
+            cursor: pointer;
+            border: 2px solid aliceblue;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .color_picker div:hover{
+            background-color: aliceblue;
+            box-shadow: 0 0 5px aliceblue;
+        }
+        
+        
+        /* ///////////////////////////////////////////////////////// */
+        
+        
+        
+        .color{}
+
+        .color div{
+            width: 80px; height: 30px;
+            text-align: center;
+            line-height: 30px;
+            display: inline-block;
+            margin-right: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: 2px solid aliceblue;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .color div:hover{
+            background-color: aliceblue;
+            box-shadow: 0 0 5px aliceblue;
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+    <h1>배경 컬러 변경하기</h1>
+    <div class="color_picker">
+        <div>#E9FF97</div>
+        <div>#FFD18E</div>
+        <div>#FFA38F</div>
+        <div>#FF7EE2</div>
+    </div>
+
+
+    <div class="color">
+        <div data="red">빨강</div>
+        <div data="orange">주황</div>
+        <div data="yellow">노랑</div>
+        <div data="green">초록</div>
+        <div data="blue">파랑</div>
+        <div data="navy">남색</div>
+        <div data="purple">보라</div>
+    </div>
+
+
+</body>
+</html>
